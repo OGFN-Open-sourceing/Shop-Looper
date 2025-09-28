@@ -1,0 +1,4 @@
+npm install @squiddleton/fortnite-api
+npm install node-fetch@3
+npm install
+npm install axios
