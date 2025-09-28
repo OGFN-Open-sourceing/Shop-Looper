@@ -1,6 +1,20 @@
 # Shop-Looper
 A basic OGFN Shop rotator made in JS, Manual and Semi auto.
 
+## License
+
+This project is licensed under the **MIT License**.
+
+Make sure to read it tho.
+
+### What does this mean?
+
+- ✅ You can **use this project freely** in personal or commercial projects.  
+- ✅ You can **modify, distribute, and share** the code.  
+- ✅ You must **include the original license and credit** (Ducki67).  
+- ❌ There is **no warranty** – if something breaks, I’m not responsible.  
+
+
 
 
 ## Configurations
