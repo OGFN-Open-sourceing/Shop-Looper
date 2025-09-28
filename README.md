@@ -42,7 +42,7 @@ A basic OGFN Shop rotator made in JS, Manual and Semi auto.
 
 **Output Settings**
   - outputPath - this si the folder that the generator creates to put the `.js` file into.
-  - outputFile - This is the file / name that create upon Shop Generation.
+  - outputFile - This is the file / name that creates upon Shop Generation.  (BTW keep the `.js` because as of right now  since this app cant make other file types)
 ```JS
 outputPath: "./Shop-output",
 outputFile: "catalog_config.json" // Dont  Don't change it if you using  backends like: Reload, LawinV2, Momentum
