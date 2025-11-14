@@ -3,6 +3,13 @@ A basic OGFN Shop rotator made in JS, Manual and Semi auto.
 
 <img width="310.99" height="310.99" alt="Shop Looper logo" src="https://github.com/user-attachments/assets/f0024aa8-ad88-4a8f-8917-13c2536e2d36" />
 
+# Features
+  - [ ] semi auto rotations.
+  - [x] Season / Chapter devider for C1S1 - C5S3 (*inspired by Brulone's Reload backend*).
+  - [x] Custom output settings.
+  - [x] Changeable *Featured* and *Daily* slots ammount.
+  - [x] Uses **https://fortnite-api.com/v2/cosmetics/br** as its API for skins and cosmetics etc.
+
 ## License
 
 This project is licensed under the **MIT License**.
@@ -51,7 +58,7 @@ Make sure to read it tho.
     AthenaLoadingScreen: 200, // Loading Screens
     AthenaMusicPack: 200, // Musick paks (NOT jatm tracks)
     HomebaseBannerIcon: 200, // Banner icons
-    default: 800 // IDK YET
+    default: 800 // Fallback price
   },
   ```
 
