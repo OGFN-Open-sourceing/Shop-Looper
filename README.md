@@ -1,5 +1,6 @@
 # Shop-Looper (Beta)
-A basic OGFN Shop rotator made in JS, Manual and Semi auto. CURRENTLY in *BETA* since its very buggy and not finished yet!!
+A basic OGFN Shop rotator made in JS, Manual and Semi auto. <br/>
+CURRENTLY in *BETA* since its very buggy and not finished yet!!
 
 <img width="310.99" height="310.99" alt="Shop Looper logo" src="https://github.com/user-attachments/assets/f0024aa8-ad88-4a8f-8917-13c2536e2d36" />
 
@@ -40,7 +41,7 @@ Make sure to read it tho.
 
 
 **Excluded items / item IDs**
-  - 50 items max! - This feature lets you filter comsetics liek BP skins and exlusive items so they dont get used in the generation
+  - 50 items max! - This feature lets you filter comsetics like BP skins and exlusive items so they dont get used in the generation
 
 
 **Price Configuration**
