@@ -5,7 +5,7 @@ CURRENTLY in *BETA* since its very buggy and not finished yet!!
 <img width="310.99" height="310.99" alt="Shop Looper logo" src="https://github.com/user-attachments/assets/f0024aa8-ad88-4a8f-8917-13c2536e2d36" />
 
 # Features
-  - [ ] semi auto rotations.
+  - [x] semi auto rotations.
   - [x] Season / Chapter devider for C1S1 - C5S3 (*inspired by Brulone's Reload backend*).
   - [x] Custom output settings.
   - [x] Changeable *Featured* and *Daily* slots ammount.
@@ -164,5 +164,49 @@ For versioned-catalog backends, keep `catalog-versioned` enabled and replace you
 - Chapter/season filters now parse values like `Chapter 2` and `Season 4` correctly.
 - Daily and featured picks are now unique (no duplicate cosmetics across slots).
 - Strict type filtering prevents invalid item templates by default.
+
+## Semi-Auto Mode (Local + VPS)
+
+Semi-auto mode can generate shop files on a timer and deploy them automatically.
+
+### 1) Setup
+
+Copy `.env.example` to `.env` and edit values.
+
+```bash
+cp .env.example .env
+```
+
+### 2) Modes
+
+- `SEMI_AUTO_MODE=off`
+  - only generates output files.
+- `SEMI_AUTO_MODE=local`
+  - generates and copies output files to `SEMI_AUTO_LOCAL_TARGET_DIR`.
+- `SEMI_AUTO_MODE=vps`
+  - generates and uploads output files to VPS using `ssh` + `scp`.
+
+Required VPS env values:
+
+- `VPS_HOST`
+- `VPS_USER`
+- `VPS_REMOTE_DIR`
+- optional: `VPS_PORT` (default `22`), `VPS_KEY_PATH`, `VPS_POST_DEPLOY_CMD`
+
+### 3) Run commands
+
+- One cycle:
+
+```bash
+npm run semi-auto:once
+```
+
+- Continuous loop:
+
+```bash
+npm run semi-auto
+```
+
+Loop interval uses `SEMI_AUTO_INTERVAL_MINUTES` (or `ShopRotationIntervalMinutes` in config if env var is not set).
   
   
