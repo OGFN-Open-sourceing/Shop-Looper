@@ -10,7 +10,21 @@ export default {
 
   // Chapter / Season limits
   bChapterlimit: "1",
-  bSeasonlimit: "2",
+  bSeasonlimit: "4",
+
+  // Era filtering behavior:
+  // - exact match keeps only this exact chapter+season (recommended for 1:1 style shops)
+  // - require introduction data prevents modern/no-intro cosmetics from slipping in
+  bExactEraMatch: true,
+  bRequireIntroductionData: true,
+  bCanonicalEraIdsOnly: true,
+
+  // Bundle settings:
+  // - If enabled, outfit slots can include a back bling in the same itemGrants array.
+  // - Skin is always first: ["AthenaCharacter:...", "AthenaBackpack:..."]
+  bBundleOutfitBackpacks: true,
+  bForceBackpackForOutfits: true,
+  bBackpacksOnlyWithSkins: true,
 
   // Excluded cosmetics (won’t appear in shop)
   bExcludedItems: [
@@ -34,10 +48,10 @@ export default {
     AthenaGlider: 800,
     AthenaSkyDiveContrail: 400,
     AthenaDance: 500,
-    AthenaItemWrap: 500,
-    AthenaLoadingScreen: 200,
-    AthenaMusicPack: 200,
-    HomebaseBannerIcon: 200,
+    AthenaItemWrap: 500, // Waps are s7+
+    AthenaLoadingScreen: 0,
+    AthenaMusicPack: 0,
+    HomebaseBannerIcon: 0,
     default: 800
   },
 
@@ -45,5 +59,52 @@ export default {
   // Output Settings
   // =====================================================
   outputPath: "./output",
-  outputFile: "catalog_config.json"
+  outputFile: "catalog_config.json",
+
+  // Output profile controls what file shape is generated:
+  // This generator is standalone output-only (no backend hook/injection).
+  // You replace backend shop files manually with generated output.
+  // - "simple": daily/featured entries with itemGrants + price
+  // - "simple-meta": simple + NewDisplayAssetPath + meta.SectionId
+  // Keep this project on the two stable outputs only:
+  // - "simple": daily/featured entries with itemGrants + price
+  // - "simple-meta": simple + NewDisplayAssetPath + meta.SectionId
+  //
+  // If outputTargets is empty, outputPath/outputFile + outputProfile is used.
+  outputProfile: "simple",
+  outputTargets: [
+    {
+      profile: "simple",
+      outputPath: "./output",
+      outputFile: "catalog_config.json",
+      dateOutput: false
+    },
+    {
+      profile: "simple-meta",
+      outputPath: "./output",
+      outputFile: "catalog_configV2.json",
+      dateOutput: false
+    }
+  ],
+
+  // Catalog profile controls for storefront output (legacy/optional).
+  catalogSettings: {
+    refreshIntervalHrs: 24,
+    dailyPurchaseHrs: 24,
+    expiration: "9999-12-31T23:59:59.999Z",
+    includeCurrencyStorefront: false,
+    currencyStorefrontName: "CurrencyStorefront",
+    dailyStorefrontName: "BRDailyStorefront",
+    featuredStorefrontName: "BRWeeklyStorefront",
+    currencyEntries: []
+  },
+
+  // When true, only known shop-supported cosmetic types are used.
+  strictTypeFiltering: true,
+
+  // Optional section id labels for profiles that include meta.
+  sectionIds: {
+    daily: "Daily",
+    featured: "Featured"
+  }
 };
