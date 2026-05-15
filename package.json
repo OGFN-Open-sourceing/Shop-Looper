@@ -1,0 +1,16 @@
+{
+  "name": "itemshop-rotator",
+  "version": "3.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "semi-auto": "node scripts/semi-auto.mjs",
+    "semi-auto:once": "node scripts/semi-auto.mjs --once"
+  },
+  "dependencies": {
+    "@squiddleton/fortnite-api": "^2.0.2",
+    "axios": "^1.16.0",
+    "node-fetch": "^3.3.2"
+  }
+}
